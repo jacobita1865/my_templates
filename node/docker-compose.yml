@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node-app
+    volumes:
+      - ./app:/usr/src/app:cached
+      # - node-module-volume:/workspace/node_modules
+    ports:
+      - "3000:3000" # 適宜
+    stdin_open: true
+    tty: true
+# volumes:
+#   node-module-volume:
